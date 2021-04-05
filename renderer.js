@@ -5,37 +5,32 @@
 // selectively enable features needed in the rendering
 // process.
 
+// Example 1 - IPC
+document.getElementById('submit').addEventListener('click', function() {
+   
+  let input1 = document.getElementById("first_number").value;
+  let input2 = document.getElementById("second_number").value;
 
-// let message2Worker = (command, payload) => {
-  //     ipc.send('message-from-renderer', {
-    //       command: command, payload: payload
-    //     });
-    //   }
-    
-// var input1 = document.getElementById('first_number');
-// input1.onkeyup = function(){
-//      alert(input1.value);
-//     // var callcount = 0;
-//     //     var action = function(){
-//     //          alert(input1.value);
-//     //     }
-//     //     var delayAction = function(action, time){
-//     //         var expectcallcount = callcount;
-//     //         var delay = function(){
-//     //             if(callcount == expectcallcount){
-//     //                 action();
-//     //             }
-//     //         }
-//     //         setTimeout(delay, time);
-//     //     }
-//     //     return function(eventtrigger){
-//     //         ++callcount;
-//     //         delayAction(action, 100);
-//     //     }
+  const {ipcRenderer} = require('electron')
 
-//     // message2Worker('first_number', { value: input1.value });
-// };
+  // send username to main.js 
+  ipcRenderer.send('asynchronous-message', { 'input1':input1, 'input2':input2} );
 
+  // receive message from main.js
+  ipcRenderer.on('asynchronous-reply', (event, arg) => {
+    // Address of native addon
+    const {add} = require('./Nodejs-Napi-Addon-Using-Cmake/build/Release/addon.node');
+
+    // Calling functions of native addon
+    var result = add(parseInt(arg['input1']),parseInt(arg['input2']));
+
+    document.getElementById('tag_result').innerHTML = 
+        "C++ Native addon add() result (IPC): " + result;
+  })
+
+  });
+
+// Example 2 - Worker JS  
 var worker = new Worker('./worker.js')
 
 // React to message sent by Worker
@@ -43,7 +38,7 @@ worker.onmessage = function(event) {
     // Print result on console and <h1> tag
     console.log("Worker : ", event.data);
     document.getElementById('tag_result').innerHTML = 
-        "C++ Native addon add() result: " + event.data;
+        "C++ Native addon add() result (Worker): " + event.data;
 
         // Terminate WebWorker
         worker.terminate();

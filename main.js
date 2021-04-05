@@ -12,7 +12,8 @@ function createWindow () {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,
-      nodeIntegrationInWorker: true
+      nodeIntegrationInWorker: true,
+      contextIsolation: false // Mandatory, otherwise 'require' will not work
     }
   })
 
@@ -20,7 +21,17 @@ function createWindow () {
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
+
+  const {ipcMain} = require('electron')
+
+  // receive message from index.html 
+  ipcMain.on('asynchronous-message', (event, arg) => {
+    
+    // send message to index.html
+    event.sender.send('asynchronous-reply', arg);
+
+    });
 }
 
 // This method will be called when Electron has finished
@@ -34,12 +45,6 @@ app.whenReady().then(() => {
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
-
-  // app.on('ready', function(){
-  //   ipcMain.on('message-from-renderer', (event, arg) => {
-  //     alert(arg.payload)
-  //   });
-  // })
 })
 
 // Quit when all windows are closed, except on macOS. There, it's common

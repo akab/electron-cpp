@@ -42,10 +42,16 @@
 </ul>
 <h2 id="to-use">To Use</h2>
 <p>To clone and run this repository you'll need <a href="https://git-scm.com">Git</a> and <a href="https://nodejs.org/en/download/">Node.js</a> (which comes with <a href="http://npmjs.com">npm</a>) installed on your computer. From your command line:</p>
-<pre><code class="language-bash"><div><span class="hljs-comment"># Clone this repository</span>
-git <span class="hljs-built_in">clone</span> https://github.com/akab/electron-cpp.git
+<pre><code class="language-bash"><div><span class="hljs-comment"># Clone this repository (and its submodules)</span>
+git <span class="hljs-built_in">clone</span> --recursive https://github.com/akab/electron-cpp.git
 <span class="hljs-comment"># Go into the repository</span>
 <span class="hljs-built_in">cd</span> electron-quick-start
+<span class="hljs-comment"># Go into submodule</span>
+<span class="hljs-built_in">cd</span> Nodejs-Napi-Addon-Using-Cmake
+<span class="hljs-comment"># Install submodule dependencies</span>
+npm install
+<span class="hljs-comment"># Move to root</span>
+<span class="hljs-built_in">cd</span> ..
 <span class="hljs-comment"># Install dependencies</span>
 npm install
 <span class="hljs-comment"># Run the app</span>

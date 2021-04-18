@@ -28,11 +28,24 @@ To clone and run this repository you'll need [Git](https://git-scm.com) and [Nod
 # Clone this repository (and its submodules)
 git clone --recursive https://github.com/akab/electron-cpp.git
 # Go into the repository
-cd electron-quick-start
+cd electron-cpp
+# Go into submodule
+cd Nodejs-Napi-Addon-Using-Cmake
+# Install submodule dependencies
+npm install
+# Move to root
+cd ..
 # Install dependencies
 npm install
 # Run the app
 npm start
+```
+To publish the application (.exe in Windows):
+```bash
+# Go into the repository
+cd electron-cpp
+# Run Make
+npm run make
 ```
 
 Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.

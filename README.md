@@ -53,7 +53,7 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 
 ## Based on
 - [electron/electron-quick-start](https://github.com/electron/electron-quick-start) - a very basic starter Electron app
-- [Electron App with C++ backend as Native Addon (Napi)](https://gauriatiq.medium.com/c-native-addon-independent-of-node-js-version-using-napi-node-addon-api-and-cmake-53315582cbd1) - a complete example 
+- [Electron App with C++ backend as Native Addon (Napi)](https://gauriatiq.medium.com/c-native-addon-independent-of-node-js-version-using-napi-node-addon-api-and-cmake-53315582cbd1) - Electron app + Node API example 
 - https://www.electronforge.io/ - how to deploy the application
 
 ## Resources for Learning Electron

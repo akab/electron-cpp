@@ -1,0 +1,3 @@
+[submodule "Nodejs-Napi-Addon-Using-Cmake"]
+	path = Nodejs-Napi-Addon-Using-Cmake
+	url = https://github.com/atiqg/Nodejs-Napi-Addon-Using-Cmake.git

@@ -40,21 +40,21 @@ npm install
 # Run the app
 npm start
 ```
-To publish the application (.exe in Windows):
+## To deploy the application
 ```bash
 # Go into the repository
 cd electron-cpp
 # Run Make
 npm run make
 ```
+This will produce `electron-cpp.exe` in `.\out\electron-cpp-win32-x64`
 
 Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
 
 ## Based on
 - [electron/electron-quick-start](https://github.com/electron/electron-quick-start) - a very basic starter Electron app
-- https://gauriatiq.medium.com/c-native-addon-independent-of-node-js-version-using-napi-node-addon-api-and-cmake-53315582cbd1
-- https://github.com/AtiqGauri/Nodejs-Napi-Addon-Using-Cmake.git
-- https://www.electronforge.io/ - publish/install app
+- [Electron App with C++ backend as Native Addon (Napi)](https://gauriatiq.medium.com/c-native-addon-independent-of-node-js-version-using-napi-node-addon-api-and-cmake-53315582cbd1) - a complete example 
+- https://www.electronforge.io/ - how to deploy the application
 
 ## Resources for Learning Electron
 

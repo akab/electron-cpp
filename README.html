@@ -45,7 +45,7 @@
 <pre><code class="language-bash"><div><span class="hljs-comment"># Clone this repository (and its submodules)</span>
 git <span class="hljs-built_in">clone</span> --recursive https://github.com/akab/electron-cpp.git
 <span class="hljs-comment"># Go into the repository</span>
-<span class="hljs-built_in">cd</span> electron-quick-start
+<span class="hljs-built_in">cd</span> electron-cpp
 <span class="hljs-comment"># Go into submodule</span>
 <span class="hljs-built_in">cd</span> Nodejs-Napi-Addon-Using-Cmake
 <span class="hljs-comment"># Install submodule dependencies</span>
@@ -57,13 +57,19 @@ npm install
 <span class="hljs-comment"># Run the app</span>
 npm start
 </div></code></pre>
+<h2 id="to-deploy-the-application">To deploy the application</h2>
+<pre><code class="language-bash"><div><span class="hljs-comment"># Go into the repository</span>
+<span class="hljs-built_in">cd</span> electron-cpp
+<span class="hljs-comment"># Run Make</span>
+npm run make
+</div></code></pre>
+<p>This will produce <code>electron-cpp.exe</code> in <code>.\out\electron-cpp-win32-x64</code></p>
 <p>Note: If you're using Linux Bash for Windows, <a href="https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/">see this guide</a> or use <code>node</code> from the command prompt.</p>
 <h2 id="based-on">Based on</h2>
 <ul>
 <li><a href="https://github.com/electron/electron-quick-start">electron/electron-quick-start</a> - a very basic starter Electron app</li>
-<li><a href="https://gauriatiq.medium.com/c-native-addon-independent-of-node-js-version-using-napi-node-addon-api-and-cmake-53315582cbd1">https://gauriatiq.medium.com/c-native-addon-independent-of-node-js-version-using-napi-node-addon-api-and-cmake-53315582cbd1</a></li>
-<li><a href="https://github.com/AtiqGauri/Nodejs-Napi-Addon-Using-Cmake.git">https://github.com/AtiqGauri/Nodejs-Napi-Addon-Using-Cmake.git</a></li>
-<li><a href="https://www.electronforge.io/">https://www.electronforge.io/</a> - publish/install app</li>
+<li><a href="https://gauriatiq.medium.com/c-native-addon-independent-of-node-js-version-using-napi-node-addon-api-and-cmake-53315582cbd1">Electron App with C++ backend as Native Addon (Napi)</a> - a complete example</li>
+<li><a href="https://www.electronforge.io/">https://www.electronforge.io/</a> - how to deploy the application</li>
 </ul>
 <h2 id="resources-for-learning-electron">Resources for Learning Electron</h2>
 <ul>

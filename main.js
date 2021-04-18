@@ -10,9 +10,9 @@ function createWindow () {
     height: 600,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: true,
-      nodeIntegrationInWorker: true,
-      contextIsolation: false // Mandatory, otherwise 'require' will not work
+      nodeIntegration: true, // enable node processes in electron app
+      nodeIntegrationInWorker: true, // enable node processes in web workers
+      contextIsolation: false // separate context btw internal logic and website in webContents (make 'require' work)
     }
   })
 

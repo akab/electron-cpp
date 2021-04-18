@@ -58,6 +58,7 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 
 ## Resources for Learning Electron
 
+- [C++ addons](https://nodejs.org/api/addons.html)
 - [electronjs.org/docs](https://electronjs.org/docs) - all of Electron's documentation
 - [electronjs.org/community#boilerplates](https://electronjs.org/community#boilerplates) - sample starter apps created by the community
 - [electron/electron-quick-start](https://github.com/electron/electron-quick-start) - a very basic starter Electron app

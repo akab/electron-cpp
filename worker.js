@@ -1,3 +1,4 @@
+// A web worker is a JavaScript running in the background, without affecting the performance of the page.
 // Address of native addon
 const {add} = require('./Nodejs-Napi-Addon-Using-Cmake/build/Release/addon.node');
 

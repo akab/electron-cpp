@@ -30,10 +30,11 @@ document.getElementById('submit').addEventListener('click', function() {
 
   });
 
-// Example 2 - Worker JS  
+// Example 2 - Worker JS
+// calls worker.js script inside a web worker
 var worker = new Worker('./worker.js')
 
-// React to message sent by Worker
+// receive any message from web worker
 worker.onmessage = function(event) {
     // Print result on console and <h1> tag
     console.log("Worker : ", event.data);
@@ -47,6 +48,7 @@ worker.onmessage = function(event) {
         worker = undefined;
 };
 
+// catches any error from web worker
 worker.onerror = function (event) {
     console.log(event.message, event);
 };
